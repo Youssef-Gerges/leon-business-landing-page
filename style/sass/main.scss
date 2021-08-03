@@ -1,0 +1,365 @@
+    @import 'config';
+    .section-head {
+        text-align: center;
+        padding: 5% 0;
+        line-height: 0.6;
+        //heading
+        h1 {
+            color: rgba(126, 126, 126, 0.2);
+            font-size: 7rem;
+            font-weight: map-get($font-weights, "head");
+        }
+    }
+    
+    body {
+        font-family: $font-family;
+        background-color: $bg-color;
+        line-height: 1.5rem;
+    }
+    
+    nav {
+        background: #fff;
+        margin: 0 auto;
+        padding: 10px 10rem;
+        .brand {
+            img {
+                width: 80px;
+            }
+        }
+        .nav-menu {
+            @include transition-ease;
+            .menu-list {
+                visibility: visible;
+                z-index: 1000;
+                position: fixed;
+                width: 100vw;
+                height: 100%;
+                top: 0;
+                left: 0;
+                opacity: 1;
+                background-color: #2c4755;
+                padding: 5% 5%;
+                display: flex;
+                justify-content: flex-start;
+                text-align: left;
+                flex-direction: column;
+                font-size: 2rem;
+                line-height: 1.5;
+                @include transition-ease;
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    @include transition-ease;
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+                .pages-menu {
+                    &::before {
+                        font-weight: map-get($font-weights, "medium");
+                        margin-bottom: 10px;
+                        content: "Menu";
+                        color: #496270;
+                        font-size: 1.5rem;
+                    }
+                }
+                .contact-menu {
+                    margin-top: 20px;
+                    &::before {
+                        font-weight: map-get($font-weights, "medium");
+                        margin-bottom: 10px;
+                        content: "Get In Touch";
+                        color: #496270;
+                        font-size: 1.5rem;
+                    }
+                }
+                .social-menu {
+                    margin-top: 20px;
+                    &::before {
+                        font-weight: map-get($font-weights, "medium");
+                        margin-bottom: 10px;
+                        content: "Get Social";
+                        color: #496270;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+            .close {
+                visibility: hidden;
+                top: -150vh;
+                opacity: 0;
+            }
+        }
+        .hamburger {
+            cursor: pointer;
+            a {
+                cursor: pointer;
+            }
+        }
+        .nav-btn {
+            z-index: 2000;
+            width: 15px;
+            height: 2px;
+            background-color: black;
+            position: absolute;
+            right: 10rem;
+            top: 1.5rem;
+            @include transition-ease;
+            &::before {
+                content: "";
+                width: 27px;
+                height: 2px;
+                background: black;
+                background-position: right;
+                position: absolute;
+                right: 0;
+                top: -10px;
+                @include transition-ease;
+            }
+            &::after {
+                content: "";
+                width: 27px;
+                height: 2px;
+                background-color: black;
+                position: absolute;
+                right: 0;
+                bottom: -10px;
+                @include transition-ease;
+            }
+        }
+        .open {
+            background: transparent;
+            width: 27px;
+            left: 4rem;
+            top: 2rem;
+            &::after {
+                transform: rotate(45deg) translate(-50%, 0);
+                background: #fff;
+                rotate: 360deg;
+            }
+            &::before {
+                transform: rotate(-45deg) translate(-55%, 0%);
+                background: #fff;
+                rotate: 360deg;
+            }
+        }
+    }
+    
+    .head {
+        height: 40vh;
+        background: url('../../imgs/glaciers-1148976_1920.jpg');
+        background-size: cover;
+        background-position: center top;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+        z-index: 1;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(254, 254, 254, 1) 20%, rgba(255, 255, 255, 0) 100%);
+            z-index: -1;
+        }
+        h1 {
+            color: $primary-color;
+            font-weight: map-get($font-weights, "head");
+            font-size: $h1-size;
+            margin-bottom: 1rem;
+        }
+    }
+    
+    #services {
+        //cards container style
+        .top-cards {
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10%;
+            //card 2 shadow
+            .card:nth-child(2) {
+                box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+                -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+                -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            }
+            //all cards style
+            .card {
+                flex-basis: 30%;
+                text-align: center;
+                padding: 50px 70px;
+                //card icon style
+                .card-icon {
+                    color: $primary-color;
+                    font-size: 5rem;
+                    margin-bottom: 30px;
+                }
+                // card body style
+                .card-body h2 {
+                    font-weight: map-get($font-weights, "medium");
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        .services {
+            background-color: #fff;
+            padding: 5rem 5rem 5rem 10rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .right-col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 3rem;
+        }
+        .service-item {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            text-align: left;
+            //item heading
+            .item-head {
+                margin-bottom: 0.5rem;
+                display: flex;
+                align-items: center;
+                h2 {
+                    display: inline-block;
+                    font-weight: map-get($font-weights, "medium");
+                }
+                span {
+                    color: $primary-color;
+                    font-size: 2.5rem;
+                    margin-right: 1rem;
+                }
+            }
+            // item body
+            .item-body {
+                padding-left: 3.5rem;
+            }
+        }
+        .left-col {
+            margin-left: 15px;
+            position: relative;
+            z-index: 1;
+            height: 400px;
+            img {
+                height: 90%;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                width: 30%;
+                height: 100%;
+                top: -20px;
+                right: -25px;
+                background: #2c4755;
+                z-index: -1;
+            }
+        }
+    }
+    
+    #portfolio {
+        .projects-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10% 5% 10%;
+            .projects-item {
+                padding-bottom: 10px;
+                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                flex-basis: 25%;
+                margin: 0 10px;
+                text-align: left;
+                img {
+                    width: 350px;
+                    margin-bottom: 10px;
+                }
+                h2 {
+                    font-weight: map-get($font-weights, "medium");
+                }
+                h2,
+                p {
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+    
+    #about {
+        background-color: #fff;
+        .about {
+            display: flex;
+            padding: 0 10% 5% 10%;
+            .left-col {
+                margin-right: 10rem;
+                position: relative;
+                z-index: 1;
+                img {
+                    width: 200px;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    border-left: $primary-color 60px solid;
+                    border-bottom: $primary-color 60px solid;
+                    height: 75%;
+                    width: 40%;
+                    top: -30px;
+                    right: -100px;
+                    z-index: -1;
+                }
+            }
+            .right-col {
+                text-align: left;
+                p:nth-child(1) {
+                    margin-bottom: 5rem;
+                }
+                hr {
+                    color: $primary-color;
+                    width: 30%;
+                    margin: 0;
+                }
+            }
+        }
+    }
+    
+    #contact {
+        padding: 0 10%;
+        .info {
+            line-height: 1.5;
+            h2 {
+                font-weight: map-get($font-weights, "head");
+                font-size: $h2-size;
+            }
+            h3 {
+                font-weight: map-get($font-weights, "medium");
+                font-size: 1.5rem;
+                padding-left: 1rem;
+                color: $primary-color;
+                margin-bottom: 2rem;
+            }
+            p {
+                padding-left: 3rem;
+            }
+            a {
+                color: #000000;
+            }
+        }
+    }
+    
+    footer {
+        background-color: #2c4755;
+        width: 100%;
+        padding: 5px 0;
+        color: #fff;
+        text-align: center;
+    }
+    
+    @import 'responsive';

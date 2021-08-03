@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "work-sans";
+    src: url('../../fonts/worksans.ttf');
+}
+
+$font-family: 'work-sans';
+$font-weights: ("bold":400,
+"medium": 700,
+"head":900);
+$h1-size: 2.2rem;
+$h2-size: 2rem;
+$primary-color:#10cab7;
+$bg-color:#fafafa;
+@mixin transition-ease {
+    transition: 0.3s ease-in-out;
+    transition-property: left top transform opacity rotate;
+}

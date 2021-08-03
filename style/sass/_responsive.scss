@@ -1,0 +1,54 @@
+@media only screen and (max-width: 600px) {
+    .section-head {
+        h1 {
+            font-size: 4rem;
+            font-weight: map-get($font-weights, "head");
+        }
+    }
+    nav {
+        padding: 10px 1rem;
+    }
+    .nav-btn {
+        top: 0.5rem;
+        right: 1rem !important;
+    }
+    .open {
+        left: 2.6rem !important;
+    }
+    #services {
+        .top-cards {
+            flex-direction: column;
+        }
+        .services {
+            flex-direction: column;
+            padding: 5rem 1rem;
+        }
+        .right-col {
+            grid-template-columns: 1fr;
+        }
+        .left-col {
+            margin-top: 2rem;
+        }
+    }
+    #portfolio {
+        .projects-list {
+            flex-direction: column;
+        }
+    }
+    #about {
+        .about {
+            flex-direction: column;
+            flex-flow: column-reverse;
+            .left-col {
+                margin-top: 2rem;
+            }
+        }
+    }
+    #contact {
+        .info {
+            p {
+                padding-left: 0rem;
+            }
+        }
+    }
+}
